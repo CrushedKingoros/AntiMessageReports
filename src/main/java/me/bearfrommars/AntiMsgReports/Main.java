@@ -21,7 +21,7 @@ public class Main extends JavaPlugin implements Listener
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onMsg(PlayerChatEvent event) {
         event.setCancelled(true);
-        Bukkit.broadcastMessage("<" + event.getPlayer().getName() + "> " + event.getMessage());
+        Bukkit.broadcastMessage("[" + event.getPlayer().getName() + "] " + event.getMessage());
     }
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onDM(PlayerCommandPreprocessEvent event) {
@@ -34,8 +34,8 @@ public class Main extends JavaPlugin implements Listener
             if (player == null) {
                 return;
             }
-            eventplayer.sendMessage(ChatColor.GRAY + "" + ChatColor.ITALIC + "You whisper to " + player.getName() + ": " + splitcmd[2]);
-            player.sendMessage(ChatColor.GRAY + "" + ChatColor.ITALIC + eventplayer.getName() + " whispers to you: " + splitcmd[2]);
+            eventplayer.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.ITALIC + player.getName() + "whispers: " + splitcmd[2]);
+            player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.ITALIC + "To " + player.getName() + ": " + splitcmd[2]);
         }
     }
     
